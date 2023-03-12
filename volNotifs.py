@@ -68,7 +68,7 @@ stdDevsData = stdDevsData[rollingStdDevWindow:]
 # rename index before transpose
 stdDevsData.index = stdDevsData.index.rename('Tickers')
 # transpose data
-sortedData = stdDevsData[:1].T
+sortedData = stdDevsData[-1:].T
 # rename column
 sortedData = sortedData.rename(
     columns={sortedData.columns[0]: "stdDevs"})
